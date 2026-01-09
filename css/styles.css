@@ -11264,3 +11264,9 @@ body {
   font-size: 1.125rem;
   line-height: 1.65;
 }
+
+
+/* Serif headers for visual contrast */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+}
