@@ -11251,3 +11251,16 @@ button:focus {
 .accessibility-email:focus {
   color: #9a4700;
 }
+
+
+/* Global font */
+body {
+  font-family: "Google Sans Flex", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+
+/* Slightly larger paragraph text for readability */
+body {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
