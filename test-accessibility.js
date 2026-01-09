@@ -2,8 +2,10 @@ const pa11y = require('pa11y');
 const fs = require('fs');
 const path = require('path');
 
+process.env.CHROME_DISABLE_CRASHPAD = '1';
+
 async function testAccessibility() {
-  const files = ['index.html', 'paa.html', 'psa.html'];
+  const files = ['index.html', 'psa_events.html', 'privacy.html', 'tou.html'];
   
   console.log('🔍 Running accessibility tests on HTML files...\n');
   
@@ -19,7 +21,10 @@ async function testAccessibility() {
       const results = await pa11y(fileUrl, {
         standard: 'WCAG2AA',
         includeWarnings: true,
-        includeNotices: false
+        includeNotices: false,
+    chromeLaunchConfig: {
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-crash-reporter', '--disable-crashpad', '--no-zygote', '--disable-gpu']
+    }
       });
       
       if (results.issues.length === 0) {

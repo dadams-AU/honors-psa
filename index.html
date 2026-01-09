@@ -135,6 +135,36 @@
               background-color: #161d27;
               color: #e6e9ef;
             }
+
+            .lead.text-muted {
+              color: #d5dae3 !important;
+            }
+
+            #info-cards .lead.text-muted {
+              color: #e6e9ef !important;
+            }
+            .btn-outline-primary,
+            .btn-outline-info,
+            .btn-outline-warning,
+            .btn-outline-secondary {
+              color: #e6e9ef !important;
+              border-color: #e6e9ef !important;
+            }
+            .btn-outline-primary:hover,
+            .btn-outline-primary:focus,
+            .btn-outline-info:hover,
+            .btn-outline-info:focus,
+            .btn-outline-warning:hover,
+            .btn-outline-warning:focus,
+            .btn-outline-secondary:hover,
+            .btn-outline-secondary:focus {
+              color: #0b0f14 !important;
+              background-color: #e6e9ef !important;
+              border-color: #e6e9ef !important;
+            }
+            .custom-link-color {
+              color: #e6e9ef !important;
+            }
           }
         </style>
     </head>
@@ -171,10 +201,10 @@
             <h2 class="display-6 fw-bold">Epsilon-Eta Chapter</h2>
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Apply and learn more about Cal State Fullerton's chapter of the National Political Science Honor Society.</p>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <a href="#portfolioModal2" class="btn btn-primary btn-lg px-4 gap-3" role="button" data-bs-toggle="modal">Application</a>
-                            <a href="https://hss.fullerton.edu/paj/pi_sigma_alpha.aspx" class="btn btn-outline-primary btn-lg px-4 gap-3 custom-link-color" role="button">CSUF Info</a>
-            </div>
+              <ul class="list-unstyled d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" aria-label="Primary actions">
+  <li><a href="#portfolioModal2" class="btn btn-primary btn-lg px-4 gap-3" role="button" data-bs-toggle="modal">Application</a></li>
+  <li><a href="https://hss.fullerton.edu/paj/pi_sigma_alpha.aspx" class="btn btn-outline-primary btn-lg px-4 gap-3 custom-link-color" role="button">CSUF Info</a></li>
+</ul>
                     <script>
                         document.getElementById('year').textContent = new Date().getFullYear();
                     </script>
@@ -215,7 +245,7 @@
 								<i class="fas fa-clipboard-check text-white" style="font-size: 4rem;"></i>
 							</div>
 							<div class="card-body text-center">
-								<h5 class="card-title fw-bold mb-3">Requirements</h5>
+								<h3 class="card-title fw-bold mb-3">Requirements</h3>
 								<p class="card-text text-muted">Check if you meet the academic and enrollment requirements for Pi Sigma Alpha membership.</p>
 								<a href="#portfolioModal1" class="btn btn-outline-primary" data-bs-toggle="modal">View Requirements</a>
 							</div>
@@ -228,7 +258,7 @@
 								<i class="fas fa-edit text-white" style="font-size: 4rem;"></i>
 							</div>
 							<div class="card-body text-center">
-								<h5 class="card-title fw-bold mb-3">Apply Now</h5>
+								<h3 class="card-title fw-bold mb-3">Apply Now</h3>
 								<p class="card-text text-muted">Ready to join? Complete your membership application online with our secure form.</p>
 								<a href="#portfolioModal2" class="btn btn-success" data-bs-toggle="modal">Start Application</a>
 							</div>
@@ -244,7 +274,7 @@
 								<i class="fas fa-calendar-alt text-white" style="font-size: 4rem;"></i>
 							</div>
 							<div class="card-body text-center">
-								<h5 class="card-title fw-bold mb-3">Recent Events</h5>
+								<h3 class="card-title fw-bold mb-3">Recent Events</h3>
 								<p class="card-text text-muted">Stay updated with the latest chapter activities, networking events, and member meetings.</p>
 								<a href="psa_events.html" class="btn btn-outline-info">View Events</a>
 							</div>
@@ -260,7 +290,7 @@
 								<div class="mb-3">
 									<i class="fas fa-external-link-alt text-primary" style="font-size: 2.5rem;"></i>
 								</div>
-								<h5 class="card-title fw-bold mb-3">&Pi;&Sigma;A Resources</h5>
+								<h3 class="card-title fw-bold mb-3">&Pi;&Sigma;A Resources</h3>
 								<p class="card-text text-muted">Access national organization links, chapter resources, and professional development opportunities.</p>
 								<a href="#portfolioModal4" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal">Learn More</a>
 							</div>
@@ -273,7 +303,7 @@
 								<div class="mb-3">
 									<i class="fas fa-info-circle text-secondary" style="font-size: 2.5rem;"></i>
 								</div>
-								<h5 class="card-title fw-bold mb-3">About &Pi;&Sigma;A</h5>
+								<h3 class="card-title fw-bold mb-3">About &Pi;&Sigma;A</h3>
 								<p class="card-text text-muted">Learn more about the benefits, activities, and opportunities that come with membership.</p>
 								<a href="#portfolioModal5" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal">Read More</a>
 							</div>
@@ -286,7 +316,7 @@
 								<div class="mb-3">
 									<i class="fas fa-question-circle text-warning" style="font-size: 2.5rem;"></i>
 								</div>
-								<h5 class="card-title fw-bold mb-3">FAQs</h5>
+								<h3 class="card-title fw-bold mb-3">FAQs</h3>
 								<p class="card-text text-muted">Get answers to commonly asked questions about membership, applications, and society activities.</p>
 								<a href="#portfolioModal6" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal">View FAQs</a>
 							</div>
@@ -301,9 +331,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">
-                    <a class="link-dark text-decoration-none me-3" href="privacy.html">Privacy Policy</a>
-                    <a class="link-dark text-decoration-none" href="tou.html">Terms of Use</a>
-                </div>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a class="link-dark text-decoration-none me-3" href="privacy.html">Privacy Policy</a></li>
+                    <li class="list-inline-item"><a class="link-dark text-decoration-none" href="tou.html">Terms of Use</a></li>
+                </ul>
+            </div>
                 <div class="col-lg-4 text-center">
                     <a href="http://www.fullerton.edu">
                         <img class="img-fluid" src="./images/CalStateFullerton-color-R.png" width="250px" alt="Cal State Fullerton Logo">
@@ -402,7 +434,7 @@
                                         <form action="https://formspree.io/f/xwpnajpz" method="POST" class="needs-validation" novalidate>
 											<!-- Personal Information Section -->
 											<div class="mb-4">
-												<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-user me-2"></i>Personal Information</h5>
+												<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-user me-2"></i>Personal Information</h3>
                                                 <div class="row mb-3">
                                                   <div class="col">
                                                     <div class="form-floating">
@@ -512,7 +544,7 @@
                                             
                                             <!-- Contact Information Section -->
                                             <div class="mb-4">
-                                            	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-envelope me-2"></i>Contact Information</h5>
+                                            	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-envelope me-2"></i>Contact Information</h3>
                                             	<div class="form-floating mb-3">
                                             		<input id="email" type="email" name="email" class="form-control" placeholder="you@csu.fullerton.edu" required>
                                                 	<label for="email">CSUF Email:</label>
@@ -536,7 +568,7 @@
                                              
                                              <!-- Academic Information Section -->
                                              <div class="mb-4">
-                                             	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-graduation-cap me-2"></i>Academic Information</h5>
+                                             	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-graduation-cap me-2"></i>Academic Information</h3>
                                              
                                         		<div class="form-floating mb-3">
                                           		<select class="form-control" id="class" name="class" required>
