@@ -1,0 +1,25 @@
+{
+  "name": "honors",
+  "version": "1.0.0",
+  "description": "This repository contains the official website for two honor societies at Cal State Fullerton. As the faculty advisor for these societies, I've developed this site to provide essential information and resources for current and prospective members.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dadams-AU/honors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dadams-AU/honors/issues"
+  },
+  "homepage": "https://github.com/dadams-AU/honors#readme",
+  "devDependencies": {
+    "axe-core": "^4.11.0",
+    "pa11y": "^9.0.1"
+  }
+}
