@@ -12,7 +12,6 @@ This is a static HTML website for Cal State Fullerton's Political Science Honor 
 - **`index.html`**: Landing page with navigation to both honor societies
 - **`paa.html`**: Pi Alpha Alpha (Public Administration) society page with embedded application modals
 - **`psa.html`**: Pi Sigma Alpha (Political Science) society page with embedded application modals
-- **Event pages**: `paa_events.html` and `psa_events.html` for society-specific events
 - **Legal pages**: `privacy.html` and `tou.html` (Terms of Use)
 
 ### Static Assets
@@ -66,11 +65,6 @@ python -m http.server 8000  # For local testing with CORS if needed
 - Test form submissions and validation logic
 
 ## Content Management
-
-### Adding New Events
-- Update `paa_events.html` or `psa_events.html` with new event information
-- Follow existing HTML structure and Bootstrap grid system
-- Add corresponding images to `images/` directory if needed
 
 ### Updating Deadlines
 - Modify deadline date in `js/scripts.js` for banner display control

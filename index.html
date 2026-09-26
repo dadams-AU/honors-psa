@@ -10,7 +10,7 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="Pi Sigma Alpha - CSUF">
         <meta property="og:description" content="The National Political Science Honor Society at Cal State Fullerton">
-        <meta property="og:url" content="https://dadams-au.github.io/honors/psa.html">
+        <meta property="og:url" content="https://psa.csuf.club/">
         
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary">
@@ -19,18 +19,15 @@
         
         <title>Pi Sigma Alpha</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css2?family=Cinzel:400,100,300,700" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link href="css/cover.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 		 
     
@@ -171,31 +168,32 @@
     </head>
     
 <body id="page-top">
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
   <header class="content-page-header">
     <div class="container-fluid py-3">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <h1 class="mb-0 h3">POSC Honor Societies</h1>
+          <p class="mb-0 h3 site-title">POSC Honor Societies</p>
         </div>
         <div class="col-md-6">
-          <nav class="nav nav-content-page justify-content-md-end justify-content-center">
+          <nav class="nav nav-content-page justify-content-md-end justify-content-center" aria-label="Honor societies">
             <a class="nav-link fw-bold" href="https://csuf.club/">Home</a>
-            <a class="nav-link fw-bold" href="https://paa.csuf.club/">&Pi; &Alpha; &Alpha;</a>
-            <a class="nav-link fw-bold active" aria-current="page" href="https://psa.csuf.club/">&Pi; &Sigma; &Alpha;</a>
+            <a class="nav-link fw-bold" href="https://paa.csuf.club/"><span aria-hidden="true">&Pi; &Alpha; &Alpha;</span><span class="visually-hidden">Pi Alpha Alpha</span></a>
+            <a class="nav-link fw-bold active" aria-current="page" href="https://psa.csuf.club/"><span aria-hidden="true">&Pi; &Sigma; &Alpha;</span><span class="visually-hidden">Pi Sigma Alpha</span></a>
           </nav>
         </div>
       </div>
     </div>
   </header>
   
-  <main>
+  <main id="main-content">
 
     <!-- Masthead-->
     <header>
         <div class="px-4 pt-5 my-5 text-center border-bottom">
             <div class="overflow-hidden" style="max-height: 30vh;">
                 <div class="container px-5">
-                  <img src="/images/psa-logo.jpeg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Pi Sigma Alpha Logo" width="500" height="300" loading="lazy">
+                  <img src="images/psa-logo.jpeg" class="img-fluid border rounded-3 shadow-lg mb-4 bg-white" alt="Pi Sigma Alpha logo" width="500" height="207">
                 </div>
               </div>
             <h1 class="display-4 fw-bold">Pi Sigma Alpha</h1>
@@ -203,13 +201,11 @@
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Apply and learn more about Cal State Fullerton's chapter of the National Political Science Honor Society.</p>
               <ul class="list-unstyled d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" aria-label="Primary actions">
-  <li><a href="#portfolioModal2" class="btn btn-primary btn-lg px-4 gap-3" role="button" data-bs-toggle="modal">Application</a></li>
-  <li><a href="https://hss.fullerton.edu/paj/pi_sigma_alpha.aspx" class="btn btn-outline-primary btn-lg px-4 gap-3 custom-link-color" role="button">CSUF Info</a></li>
+  <li><button type="button" class="btn btn-primary btn-lg px-4 gap-3" data-bs-toggle="modal" data-bs-target="#portfolioModal2">Application</button></li>
+  <li><a href="https://hss.fullerton.edu/paj/pi_sigma_alpha.aspx" class="btn btn-outline-primary btn-lg px-4 gap-3 custom-link-color">CSUF Info</a></li>
 </ul>
-                    <script>
-                        document.getElementById('year').textContent = new Date().getFullYear();
-                    </script>
-          </div>
+            </div>
+        </div>
     </header>
 
     <!-- Announcement Banner 
@@ -224,9 +220,9 @@
          <div class="section-title clear">
         <h2>General Information</h2>
       </div>
-            <p>Pi Sigma Alpha, the National Political Science Honor Society at CSUF, is a talented group of students dedicated to excelling in the field of political science, in education, and in thier careers. This society recognizes and promotes high academic achievement in political science, providing our members with unique opportunities for scholarly growth, networking, and leadership development.</p>
+            <p>Pi Sigma Alpha, the National Political Science Honor Society at CSUF, is a talented group of students dedicated to excelling in the field of political science, in education, and in their careers. This society recognizes and promotes high academic achievement in political science, providing our members with unique opportunities for scholarly growth, networking, and leadership development.</p>
                         
-            <p>Our activities range from discussions and guest lectures to community service initiatives and networking events. We assist with the annual Royce Symposium, the University Town Hall, and other campus actvites. Our annual induction banquet is each spring semester.</p>
+            <p>Our activities range from discussions and guest lectures to community service initiatives and networking events. We assist with the annual Royce Symposium, the University Town Hall, and other campus activities. Our annual induction banquet is each spring semester.</p>
     </div>	
 </section>
 
@@ -239,7 +235,7 @@
 				</div>
 				
 				<!-- Primary Action Cards -->
-				<div class="row g-4 mb-5">
+				<div class="row g-4 mb-5 justify-content-center">
 					<div class="col-lg-4 col-md-6">
 						<div class="card h-100 shadow-sm border-0 card-hover">
 							<div class="card-img-top bg-primary bg-gradient d-flex align-items-center justify-content-center" style="height: 200px;">
@@ -248,7 +244,7 @@
 							<div class="card-body text-center">
 								<h3 class="card-title fw-bold mb-3">Requirements</h3>
 								<p class="card-text text-muted">Check if you meet the academic and enrollment requirements for Pi Sigma Alpha membership.</p>
-								<a href="#portfolioModal1" class="btn btn-outline-primary" data-bs-toggle="modal">View Requirements</a>
+								<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#portfolioModal1">View Requirements</button>
 							</div>
 						</div>
 					</div>
@@ -261,23 +257,10 @@
 							<div class="card-body text-center">
 								<h3 class="card-title fw-bold mb-3">Apply Now</h3>
 								<p class="card-text text-muted">Ready to join? Complete your membership application online with our secure form.</p>
-								<a href="#portfolioModal2" class="btn btn-success" data-bs-toggle="modal">Start Application</a>
+								<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#portfolioModal2">Start Application</button>
 							</div>
 							<div class="position-absolute top-0 end-0 m-3">
 								<span class="badge bg-warning text-dark">Popular</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-lg-4 col-md-6">
-						<div class="card h-100 shadow-sm border-0 card-hover">
-							<div class="card-img-top bg-info bg-gradient d-flex align-items-center justify-content-center" style="height: 200px;">
-								<i class="fas fa-calendar-alt text-white" style="font-size: 4rem;"></i>
-							</div>
-							<div class="card-body text-center">
-								<h3 class="card-title fw-bold mb-3">Recent Events</h3>
-								<p class="card-text text-muted">Stay updated with the latest chapter activities, networking events, and member meetings.</p>
-								<a href="psa_events.html" class="btn btn-outline-info">View Events</a>
 							</div>
 						</div>
 					</div>
@@ -293,7 +276,7 @@
 								</div>
 								<h3 class="card-title fw-bold mb-3">&Pi;&Sigma;A Resources</h3>
 								<p class="card-text text-muted">Access national organization links, chapter resources, and professional development opportunities.</p>
-								<a href="#portfolioModal4" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal">Learn More</a>
+								<button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal4">Learn More</button>
 							</div>
 						</div>
 					</div>
@@ -306,7 +289,7 @@
 								</div>
 								<h3 class="card-title fw-bold mb-3">About &Pi;&Sigma;A</h3>
 								<p class="card-text text-muted">Learn more about the benefits, activities, and opportunities that come with membership.</p>
-								<a href="#portfolioModal5" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal">Read More</a>
+								<button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal5">Read More</button>
 							</div>
 						</div>
 					</div>
@@ -319,7 +302,7 @@
 								</div>
 								<h3 class="card-title fw-bold mb-3">FAQs</h3>
 								<p class="card-text text-muted">Get answers to commonly asked questions about membership, applications, and society activities.</p>
-								<a href="#portfolioModal6" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal">View FAQs</a>
+								<button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal6">View FAQs</button>
 							</div>
 						</div>
 					</div>
@@ -328,60 +311,56 @@
 		</section>
         
 
+    </main>
+
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a class="link-dark text-decoration-none me-3" href="privacy.html">Privacy Policy</a></li>
-                    <li class="list-inline-item"><a class="link-dark text-decoration-none" href="tou.html">Terms of Use</a></li>
-                </ul>
-            </div>
-                <div class="col-lg-4 text-center">
-                    <a href="http://www.fullerton.edu">
-                        <img class="img-fluid" src="./images/CalStateFullerton-color-R.png" width="250px" alt="Cal State Fullerton Logo">
-                    </a>
-                </div>  
-                <div class="col-lg-4 text-lg-end">
-                    Copyright &copy; <span id="year"></span> David P. Adams
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a class="link-dark text-decoration-none me-3" href="privacy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a class="link-dark text-decoration-none me-3" href="tou.html">Terms of Use</a></li>
+                        <li class="list-inline-item"><a class="link-dark text-decoration-none" href="https://dadams.io">Faculty Advisor</a></li>
+                    </ul>
                 </div>
-                
+                <div class="col-lg-4 text-center">
+                    <a href="https://www.fullerton.edu">
+                    <picture>
+                        <source srcset="images/CalStateFullerton-reversed-R.png" media="(prefers-color-scheme: dark)">
+                        <img class="img-fluid" src="images/CalStateFullerton-color-R.png" width="250" height="41" alt="Cal State Fullerton website">
+                    </picture>
+                    </a>
+                </div>
+                <div class="col-lg-4 text-lg-end">Copyright &copy; <span id="year"></span> David P. Adams</div>
             </div>
-            <script>
-                document.getElementById('year').textContent = new Date().getFullYear();
-            </script>
         </div>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
     </footer>
 
             
             <!-- Portfolio Modals-->
 
               <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1-title" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal">
-                        <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                    </div>
-                    <style>
-                        ul {
-                            list-style-type: none;
-                        }
-                    </style>
+                    <button type="button" class="close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-3x" aria-hidden="true"></i></button>
         
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 modal-body">
                                 <div class="section-title text-center">
-                                    <h2 class="primary">Requirements</h2>
+                                    <h2 id="portfolioModal1-title">Requirements</h2>
                                 </div>
         
                                 <div class="card mb-4">
                                                 <div class="card-body">
-                                                <h4>Undergraduate Students:</h4>
-                                                <ul>
+                                                <h3 class="fs-4">Undergraduate Students:</h3>
+                                                <ul class="list-plain">
                                                   <li>Minimum 3.0 cumulative GPA</li>
-                                                 <li> Minimum 3.25 POSC GPA</li>
+                                                 <li>Minimum 3.25 POSC GPA</li>
                                                  <li>Completion of ten units in political science</li>
                                                   <li>At least three upper-division units (300-level or higher)</li>
                                                   <li>Open to political science majors <em>and</em> minors</li>
@@ -391,19 +370,19 @@
         
                                 <div class="card mb-4">
                                     <div class="card-body">
-                                           <h4>Graduate Students:</h4>
-                                           <ul>
+                                           <h3 class="fs-4">Graduate Students:</h3>
+                                           <ul class="list-plain">
                                                <li>Minimum GPA of 3.5</li>
-                                               <li>Completion of nine graduate-level units toward the masters degree</li>
+                                               <li>Completion of nine graduate-level units toward the master's degree</li>
                                            </ul>
                                            </div>
                                 </div>
         
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4>$50 Total Membership Fee:</h4>
-                                    <ul>
-                                      <li><strong>$15 Local Chapter Dues:</strong></li>
+                                    <h3 class="fs-4">$50 Total Membership Fee:</h3>
+                                    <ul class="list-plain">
+                                      <li><strong>$15 Local Chapter Dues:</strong> Payment instructions are included in your welcome email.</li>
                                       <li><strong>$35 National Dues:</strong> Pay directly to Pi Sigma Alpha through their online portal after acceptance and local dues payment.</li>
                                       <li>Covers lifetime membership.</li>
                                       <li><em>Local dues must be paid before the application is processed. National registration occurs after acceptance.</em></li>
@@ -418,68 +397,66 @@
         </div>
         
                 <!-- Portfolio item 2 modal popup-->
-                <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+                <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="modalTitle applicationTitle" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal">
-                        <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                    </div>
+                    <button type="button" class="close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-3x" aria-hidden="true"></i></button>
                     <div class="container2">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <section>
                                         <h1 class="text-center" id="modalTitle">Pi Sigma Alpha</h1>
-                                        <h2 class="text-center">Complete the Application</h2>
-                                        <p class="text-center text-muted mb-4">Your information will be sent to the faculty advisor for review.</p>
+                                        <h2 class="text-center" id="applicationTitle">Complete the Application</h2>
+                                        <p class="text-center text-muted mb-4">Your information will be sent to the faculty advisor for review. Fields marked with an asterisk (*) are required.</p>
                                         <form action="https://formspree.io/f/xwpnajpz" method="POST" class="needs-validation" novalidate>
 											<!-- Personal Information Section -->
 											<div class="mb-4">
-												<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-user me-2"></i>Personal Information</h3>
+												<h3 class="fs-5 form-section-title border-bottom pb-2 mb-3"><i class="fas fa-user me-2" aria-hidden="true"></i>Personal Information</h3>
                                                 <div class="row mb-3">
                                                   <div class="col">
                                                     <div class="form-floating">
-                                                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
-                                                      <label for="firstName">First Name</label>
+                                                      <input type="text" class="form-control" id="firstName" autocomplete="given-name" name="firstName" placeholder="First Name" required>
+                                                      <label for="firstName">First Name <span aria-hidden="true">*</span></label>
                                                     </div>
                                                   </div>
         
                                                   <div class="col">
                                                     <div class="form-floating">
-                                                      <input type="text" class="form-control" id="middleInitial" name="MI" placeholder="MI" maxlength="1">
+                                                      <input type="text" class="form-control" id="middleInitial" autocomplete="additional-name" name="MI" placeholder="MI" maxlength="1">
                                                       <label for="middleInitial">Middle Initial</label>
                                                     </div>
                                                   </div>
         
                                                   <div class="col">
                                                     <div class="form-floating">
-                                                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
-                                                      <label for="lastName">Last Name</label>
+                                                      <input type="text" class="form-control" id="lastName" autocomplete="family-name" name="lastName" placeholder="Last Name" required>
+                                                      <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
                                                     </div>
                                                   </div>
                                                 </div>
         
                                                 <div class="form-floating mb-3">
-                                                  <input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St" required>
-                                                  <label for="address1">Address</label>
+                                                  <input type="text" class="form-control" id="address1" autocomplete="address-line1" name="address1" placeholder="1234 Main St" required>
+                                                  <label for="address1">Address <span aria-hidden="true">*</span></label>
                                                 </div>
         
                                                 <div class="form-floating mb-3">
-                                                  <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+                                                  <input type="text" class="form-control" id="address2" autocomplete="address-line2" name="address2" placeholder="Apartment, studio, or floor">
                                                   <label for="address2">Address 2</label>
                                                 </div>
                                             
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="form-floating">
-                                                      <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
-                                                        <label for="city">City</label>
+                                                      <input type="text" class="form-control" id="city" autocomplete="address-level2" name="city" placeholder="City" required>
+                                                        <label for="city">City <span aria-hidden="true">*</span></label>
                                                 </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-floating">
-                                                  <select name="state" class="form-control" required>
-                                                    <option value="" selected="" disabled="">State</option>
+                                                  <select id="state" name="state" class="form-select" autocomplete="address-level1" required>
+                                                    <option value="" selected disabled>Select...</option>
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
                                                     <option value="AZ">Arizona</option>
@@ -532,12 +509,13 @@
                                                     <option value="WI">Wisconsin</option>
                                                     <option value="WY">Wyoming</option>
                                                   </select>
+                                                  <label for="state">State <span aria-hidden="true">*</span></label>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-floating">
-                                                      <input type="text" class="form-control" id="postal-code" name="postal-code" placeholder="ZIP" required>
-                                                    <label for="postal-code">ZIP</label>
+                                                      <input type="text" class="form-control" id="postal-code" autocomplete="postal-code" name="postal-code" placeholder="ZIP" required>
+                                                    <label for="postal-code">ZIP <span aria-hidden="true">*</span></label>
                                                     </div>
                                                 </div>
                                             		</div>
@@ -545,60 +523,62 @@
                                             
                                             <!-- Contact Information Section -->
                                             <div class="mb-4">
-                                            	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-envelope me-2"></i>Contact Information</h3>
+                                            	<h3 class="fs-5 form-section-title border-bottom pb-2 mb-3"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Contact Information</h3>
                                             	<div class="form-floating mb-3">
-                                            		<input id="email" type="email" name="email" class="form-control" placeholder="you@csu.fullerton.edu" required>
-                                                	<label for="email">CSUF Email:</label>
+                                            		<input id="email" autocomplete="email" type="email" name="email" class="form-control" placeholder="you@csu.fullerton.edu" required>
+                                                	<label for="email">CSUF Email <span aria-hidden="true">*</span></label>
                                             	</div>
         
                                             <div class="form-floating mb-3">
-                                            <input id="nonemail" type="email" name="nonemail" class="form-control" placeholder="you@hello.com" required>
-                                                <label for="nonemail">Non-CSUF Email:</label>
+                                            <input id="nonemail" autocomplete="email" type="email" name="nonemail" class="form-control" placeholder="you@hello.com" required>
+                                                <label for="nonemail">Non-CSUF Email <span aria-hidden="true">*</span></label>
                                             </div>
         
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="phone" type="tel" name="Phone" pattern="(\+\d{1,2}\s?)?(\()?(\d{3})(?(2)\))[-.\s]?(\d{3})[-.\s]?(\d{4})" required>
-                                                <label for="phone">Phone:</label>
+                                                <input class="form-control" id="phone" autocomplete="tel" type="tel" name="Phone" pattern="(\+?1[\s.\-]?)?(\(\d{3}\)|\d{3})[\s.\-]?\d{3}[\s.\-]?\d{4}" title="10-digit phone number, for example 657-278-2011" aria-describedby="phoneHelp" required>
+                                                <label for="phone">Phone <span aria-hidden="true">*</span></label>
+                                                <div id="phoneHelp" class="form-text text-start">Example: 657-278-2011</div>
                                             </div>
         
                                             <div class="form-floating mb-3">
-                                                  <input class="form-control" id="CWID" type="text" name="CWID" pattern="\d{9}" required>
-                                                  <label for="CWID">CWID:</label>
+                                                  <input class="form-control" id="CWID" type="text" name="CWID" pattern="\d{9}" inputmode="numeric" maxlength="9" autocomplete="off" title="9-digit CWID" aria-describedby="cwidHelp" required>
+                                                  <label for="CWID">CWID <span aria-hidden="true">*</span></label>
+                                                  <div id="cwidHelp" class="form-text text-start">Your 9-digit campus-wide ID</div>
                                              	</div>
                                              </div>
                                              
                                              <!-- Academic Information Section -->
                                              <div class="mb-4">
-                                             	<h5 class="text-primary border-bottom pb-2 mb-3"><i class="fas fa-graduation-cap me-2"></i>Academic Information</h3>
+                                             	<h3 class="fs-5 form-section-title border-bottom pb-2 mb-3"><i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>Academic Information</h3>
                                              
                                         		<div class="form-floating mb-3">
-                                          		<select class="form-control" id="class" name="class" required>
+                                          		<select class="form-select" id="class" name="class" required>
                                             		<option value="">Select...</option>
                                             		<option value="sophomore">Sophomore</option>
                                             		<option value="junior">Junior</option>
                                             		<option value="senior">Senior</option>
                                             		<option value="graduate">Graduate</option>
                                           		</select>
-                                          		<label for="class">Current Class Level</label>
+                                          		<label for="class">Current Class Level <span aria-hidden="true">*</span></label>
                                           		<div class="invalid-feedback">Please select your current class level.</div>
                                         		</div>
         
                                         <div class="row mb-3">
                                         <div class="col">
                                             <div class="form-floating">
-                                                <select id="expectedGraduationSemester" name="expectedGraduationSemester" class="form-control" required>
+                                                <select id="expectedGraduationSemester" name="expectedGraduationSemester" class="form-select" required>
                                                     <option value="">Select...</option>
                                                     <option value="Spring">Spring</option>
                                                     <option value="Summer">Summer</option>
                                                     <option value="Fall">Fall</option>
                                                 </select>
-                                                <label for="expectedGraduationSemester">Expected Graduation Semester</label>
+                                                <label for="expectedGraduationSemester">Expected Graduation Semester <span aria-hidden="true">*</span></label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-floating">
-                                                <select id="expectedGraduationYear" name="expectedGraduationYear" class="form-control" required></select>
-                                                <label for="expectedGraduationYear">Expected Graduation Year</label>
+                                                <select id="expectedGraduationYear" name="expectedGraduationYear" class="form-select" required><option value="">Select...</option></select>
+                                                <label for="expectedGraduationYear">Expected Graduation Year <span aria-hidden="true">*</span></label>
                                             </div>
                                         </div>
                                     </div>
@@ -616,23 +596,23 @@
         
         
                                         <div class="form-floating mb-3">
-                                          <input class="form-control" id="cumulativeGPA" type="number" step="0.01" min="3.0" name="cumulativeGPA">
-                                          <label for="cumulativeGPA">Cumulative GPA:</label>
+                                          <input class="form-control" id="cumulativeGPA" type="number" step="0.001" min="3.0" max="4" inputmode="decimal" name="cumulativeGPA" required>
+                                          <label for="cumulativeGPA">Cumulative GPA <span aria-hidden="true">*</span></label>
                                         </div>
         
                                         <div class="form-floating mb-3">
-                                          <input class="form-control" id="PSGPA" type="number" step="0.01" min="3.25" name="PSGPA">
-                                          <label for="PSGPA">Political Science GPA:</label>
+                                          <input class="form-control" id="PSGPA" type="number" step="0.001" min="3.25" max="4" inputmode="decimal" name="PSGPA" required>
+                                          <label for="PSGPA">Political Science GPA <span aria-hidden="true">*</span></label>
                                         </div>
                                             
                                         <div class="form-floating mb-3">
-                                          <input class="form-control" id="totalPSunits" type="number" min="10" name="totalPSunits">
-                                          <label for="totalPSunits">Total Political Science Units Completed:</label>
+                                          <input class="form-control" id="totalPSunits" type="number" min="9" name="totalPSunits" required>
+                                          <label for="totalPSunits">Total Political Science Units Completed <span aria-hidden="true">*</span></label>
                                         </div>	
                                             
                                         <div class="form-floating mb-3">
-                                          <input class="form-control" id="upperDivisionUnits" type="number" min="3" name="upperDivisionUnits">
-                                          <label for="upperDivisionUnits">Political Science Upper Division Units Completed:</label>
+                                          <input class="form-control" id="upperDivisionUnits" type="number" min="3" name="upperDivisionUnits" required>
+                                          <label for="upperDivisionUnits">Political Science Upper Division Units Completed <span aria-hidden="true">*</span></label>
                                         </div>		
         
                                         <div class="form-floating mb-3">
@@ -642,8 +622,8 @@
                                         </div>
         
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4 pt-3 border-top">
-                                        <button onClick="handleFormSubmit(event)" class="btn btn-success btn-lg px-4 me-md-2" type="submit">
-                                        	<i class="fas fa-paper-plane me-2"></i>Submit Application
+                                        <button class="btn btn-success btn-lg px-4 me-md-2" type="submit">
+                                        	<i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Submit Application
                                         </button>
                                         <button type="reset" class="btn btn-outline-secondary btn-lg px-4">Clear Form</button>
                                     </div>
@@ -657,38 +637,16 @@
                 </div>
             </div>
         </div>
-                <!-- Portfolio item 3 modal popup-->
-                <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="close-modal" data-bs-dismiss="modal">
-                                <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                            </div>
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8">
-                                        <div class="modal-body">
-                                            <!-- Project details-->
-                                            <h2 class="text-uppercase">Current Events</h2>
-                                            <p class="item-intro text-muted">See how you can participate</p>                                    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Portfolio item 4 modal popup-->
-                <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4-title" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="close-modal" data-bs-dismiss="modal">
-                                <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                            </div>
+                            <button type="button" class="close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-3x" aria-hidden="true"></i></button>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="modal-body">
+                                                <h2 id="portfolioModal4-title">Organization Links</h2>
                                                 <p class="text-center">Here are some resources and updates related to the CSUF chapter of Pi Sigma Alpha, including links to the national organization, information about membership, and campus programming.</p>
                                     <div class="row justify-content-center mt-4">
                                         <div class="col-lg-6">
@@ -712,26 +670,24 @@
         </div>
         
                         <!-- Portfolio item 5 modal popup-->
-                    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5-title" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="close-modal" data-bs-dismiss="modal">
-                                    <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                                </div>
+                                <button type="button" class="close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-3x" aria-hidden="true"></i></button>
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8">
                                             <div class="modal-body">
                                                 <!-- Project details-->
-                                    <h2 class="mb-4 text-center">Benefits of Membership</h2>
+                                    <h2 class="mb-4 text-center" id="portfolioModal5-title">Benefits of Membership</h2>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">Lifetime membership</li>
-                                        <li class="list-group-item">Honor cords and medallion to wear at graduation</li>
+                                        <li class="list-group-item">Honor cords to wear at graduation, plus a charm or pin</li>
                                         <li class="list-group-item">Looks great on resumes/applications</li>
                                         <li class="list-group-item">Participate in social activities, community service, and special speaker events</li>
                                         <li class="list-group-item">Many opportunities for networking with fellow students, faculty, and alumni</li>
                                         <li class="list-group-item">Possibilities for leadership experience by serving as an officer.</li>
-                                        <li class="list-group-item">Financial Assistant and Awards</li>
+                                        <li class="list-group-item">Financial Assistance and Awards</li>
                                         <li class="list-group-item">Start as a GS-7 Federal Employee</li>
                                         <li class="list-group-item">Participation in Student Conference</li>
                                         <li class="list-group-item">Discount on Kaplan Prep Courses</li>
@@ -748,101 +704,99 @@
         
         
             <!-- Portfolio item 6 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6-title" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal">
-                        <i class="fa-solid fa-circle-xmark fa-3x"></i>
-                     </div>
+                    <button type="button" class="close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-3x" aria-hidden="true"></i></button>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                            <h2>FAQs</h2>
+                            <h2 id="portfolioModal6-title">FAQs</h2>
 
                             <div class="accordion" id="faqAccordion">
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne"></h2>
+                                    <h3 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                             When can I submit my application for Pi Sigma Alpha (ΠΣΑ)?
                                         </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             We accept applications for new members each Fall and Spring semester. Please check this page for the application at the beginning of the semester and submit it by the listed due date. We do not accept applications during the Summer semester.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
+                                    <h3 class="accordion-header" id="headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             I already submitted my application. When will I hear if I am accepted?
                                         </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             Thank you for your application! Applications are typically processed together after the fall and spring application deadlines. You can expect to receive an email about your application status approximately one week after the deadline. We appreciate your patience during the review process.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
+                                    <h3 class="accordion-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             My GPA is just below the qualification GPA. Can I still join?
                                         </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             We appreciate your interest in joining Pi Sigma Alpha! Unfortunately, we must follow the GPA standards established by the national Honor Society and can only accept students who currently meet the minimum qualification requirements. We encourage you to continue your academic excellence and apply again in a future semester when you meet the requirements.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFour">
+                                    <h3 class="accordion-header" id="headingFour">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                             If you count the classes I'm currently taking, then I have the required number of units. Can I join now?
                                         </button>
-                                    </h2>
-                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             Thank you for your question! Unfortunately, qualification is based only on completed units, not units currently in progress. We encourage you to apply once you have successfully completed the required coursework. We look forward to receiving your application in a future semester!
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFive">
+                                    <h3 class="accordion-header" id="headingFive">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                             I missed the deadline for this semester; can you still take my application?
                                         </button>
-                                    </h2>
-                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             Thank you for your interest in joining! Unfortunately, we cannot accept applications after the deadline as our paperwork must be completed and submitted to the national office within a specific timeframe. However, we would be delighted to receive your application next semester and encourage you to mark your calendar for the upcoming deadline.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingSix">
+                                    <h3 class="accordion-header" id="headingSix">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                             I'll have the qualifying GPA for Pi Sigma Alpha at the end of the semester I graduate. Can I still join?
                                         </button>
-                                    </h2>
-                                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion"></div>
+                                    </h3>
+                                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
                                             Absolutely! You may join ΠΣΑ as a CSUF graduate as long as you meet the qualifying GPA requirements upon graduation. We welcome you to submit your application and look forward to having you as a member of our honor society.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingSeven">
+                                    <h3 class="accordion-header" id="headingSeven">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                             When do I get my commencement cords and charm or pin?
                                         </button>
-                                    </h2>
-                                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                                    </h3>
+                                    <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            New chapter members receive their graduation cords and medallion at our annual banquet held at the end of the spring semester. If you're unable to attend the banquet, don't worry! The chapter advisor will email you with instructions on how to pick up your items after the event.
+                                            New chapter members receive their graduation cords and charm or pin at our annual banquet held at the end of the spring semester. If you're unable to attend the banquet, don't worry! The chapter advisor will email you with instructions on how to pick up your items after the event.
                                         </div>
                                     </div>
                                 </div>
@@ -855,10 +809,8 @@
                 </div>
             </div>
         </div>
- 
-</main>
-        
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
 
 

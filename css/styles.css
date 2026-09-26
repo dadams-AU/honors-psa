@@ -73,8 +73,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #FF7900;
-  --bs-link-hover-color: #FF7900;
+  --bs-link-color: #9a4700;
+  --bs-link-hover-color: #7a3300;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff4cc;
 }
@@ -4347,12 +4347,12 @@ textarea.form-control-lg {
   --bs-accordion-btn-icon-width: 1.25rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e6b400'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%237a3300'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --bs-accordion-btn-focus-border-color: #ffe480;
   --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
-  --bs-accordion-active-color: #FF7900;
+  --bs-accordion-active-color: #7a3300;
   --bs-accordion-active-bg: #fffae6;
 }
 
@@ -11023,7 +11023,6 @@ opacity: 0.3;
 /* Modern Card Styles */
 .card-hover {
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .card-hover:hover {
@@ -11167,12 +11166,21 @@ opacity: 0.3;
   color: #4b5563 !important;
 }
 
-/* Ensure proper focus states for accessibility */
-.btn:focus,
-a:focus,
-button:focus {
-  outline: 2px solid #FF7900;
+/* Keyboard focus: orange ring over a navy inner ring, so it clears 3:1 on light and dark backgrounds */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible,
+.accordion-button:focus-visible {
+  outline: 3px solid #FF7900;
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px #00244E;
+}
+
+.accordion-button:focus-visible {
+  outline-offset: -5px;
+  box-shadow: inset 0 0 0 2px #00244E;
 }
 
 
@@ -11269,4 +11277,148 @@ body {
 /* Serif headers for visual contrast */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Slab", "Times New Roman", serif;
+}
+
+
+/* ========================================
+   Shared layout and accessibility helpers (2026 audit)
+   ======================================== */
+
+/* Skip link: hidden until focused */
+.skip-link:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #00244E;
+  font-weight: 700;
+  border-radius: 0.375rem;
+}
+
+/* Content page header (shared by every society page) */
+.content-page-header {
+  background-color: #003262;
+  color: #ffffff;
+  border-bottom: 3px solid #FF7900;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-page-header .site-title {
+  color: #ffffff;
+}
+
+.nav-content-page .nav-link {
+  color: #f8fafc;
+  border-bottom: 3px solid transparent;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+
+.nav-content-page .nav-link:hover,
+.nav-content-page .nav-link:focus {
+  color: #ffffff;
+  border-bottom-color: #FF7900;
+  background-color: #0b3b61;
+}
+
+.nav-content-page .nav-link:focus-visible {
+  outline: 2px solid #FF7900;
+  outline-offset: 2px;
+}
+
+.nav-content-page .nav-link.active {
+  color: #ffffff;
+  border-bottom-color: #FF7900;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .content-page-header .row > div {
+    text-align: center;
+  }
+
+  .content-page-header .site-title {
+    margin-bottom: 1rem;
+  }
+
+  .nav-content-page {
+    flex-wrap: wrap;
+  }
+}
+
+/* Modal close control is a real button now; keep the old icon look */
+.portfolio-modal .close-modal {
+  z-index: 2;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  line-height: 1;
+}
+
+/* Form section headings (were .text-primary, which rendered yellow on white) */
+.form-section-title {
+  color: #00244E;
+}
+
+/* Quoted callout (replaces an inline light-gray blockquote that failed contrast in dark mode) */
+.callout {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: #f1f3f5;
+  border-left: 4px solid #FF7900;
+  text-align: left;
+}
+
+.list-plain {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Events page embeds */
+.embed-frame {
+  width: 100%;
+  border: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form-section-title {
+    color: #8ab4ff;
+  }
+
+  .callout {
+    background-color: #1b2431;
+    color: #e6e9ef;
+  }
+
+  .form-text {
+    color: #b3bac5;
+  }
+
+  /* Bootstrap's focus state switches fields to a white background; keep them dark */
+  .form-control:focus,
+  .form-select:focus {
+    background-color: #0f141b;
+    color: #e6e9ef;
+  }
+
+  .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e6e9ef' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover,
+  .card-hover:hover,
+  .btn,
+  .card,
+  .form-control,
+  .nav-content-page .nav-link {
+    transition: none;
+    transform: none;
+  }
 }

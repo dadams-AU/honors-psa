@@ -1,153 +1,79 @@
-# Accessibility Report - CSUF POSC Honor Societies Portal
+# Accessibility & Function Audit: CSUF POSC Honor Societies
 
-**Date:** October 12, 2025  
-**Standard:** WCAG 2.0 Level AA  
-**Testing Tool:** pa11y
+**Date:** September 26, 2026
+**Sites:** csuf.club (portal), paa.csuf.club (Pi Alpha Alpha), psa.csuf.club (Pi Sigma Alpha)
+**Target:** WCAG 2.2 Level AA
+**Method:** axe-core 4.13 (via Playwright/Chromium) on all 11 pages in light and dark color schemes, with every modal opened and every FAQ panel expanded; html-validate 11.16 on every page; scripted keyboard, form-submission, and 320px-width reflow tests.
 
----
+This replaces the October 2025 report, which described the sites as WCAG 2.0 AA compliant. They were not: the checks below found failures that report missed.
 
-## 🎉 Summary
+## Results
 
-All **CRITICAL ERRORS** have been fixed! The site now passes WCAG2AA compliance with only minor warnings remaining.
+The audit covered 11 pages. Afterward, at the advisor's request, the two events pages (last updated 2023) and their home-page cards were removed, along with about 38 MB of unused images. The sites now have 9 pages; all still pass.
 
-### Before Fixes:
-- **index.html:** 7 warnings, 0 errors
-- **paa.html:** 8 warnings, 6 errors ❌
-- **psa.html:** 8 warnings, 6 errors ❌
+| Check | Before | After |
+|---|---|---|
+| axe violations (WCAG 2.2 AA + best practice, both themes) | 82 | 0 |
+| HTML validation errors | 11 of 11 pages failing | 0 |
+| JavaScript errors on load | 3 pages | 0 |
 
-### After Fixes:
-- **index.html:** 6 warnings, 0 errors ✅
-- **paa.html:** 5 warnings, 0 errors ✅
-- **psa.html:** 5 warnings, 0 errors ✅
+Layout already reflowed cleanly at 320px wide and still does. Automated tools catch only part of what real users run into, so a clean run is the floor; see "Still needs a human" below.
 
----
+## What was broken, and the fix
 
-## ✅ Issues Fixed
+### Accessibility failures
 
-### 1. Color Contrast - CRITICAL (Fixed)
-**Problem:** Multiple buttons had insufficient contrast ratios.
+- **Modal close buttons were `<div>`s** (2.1.1 Keyboard, 4.1.2 Name/Role/Value). Keyboard and screen reader users could not reach or identify them. Now `<button aria-label="Close">`.
+- **Dialogs had no accessible name** (4.1.2). Every modal now points `aria-labelledby` at its heading.
+- **"State" dropdown had no label** (1.3.1, 4.1.2). Screen readers announced an unnamed combo box. Label added.
+- **Form section headings rendered yellow on white, 1.55:1** (1.4.3). The theme's `--bs-primary-rgb` was still the Agency template's yellow. Headings now use CSUF navy.
+- **Links rendered in #FF7900 on white, 2.5:1** (1.4.3). Link color is now #9a4700 (6.4:1); FAQ open-state text and chevron darkened to match.
+- **Focus ring was orange on white, 2.6:1** (1.4.11, 2.4.7). Replaced with an orange ring over a navy inner ring, visible on light and dark backgrounds.
+- **Dark mode: the resources quote box was light text on light gray, 1.23:1** (1.4.3). Replaced the inline style with a themed `.callout`. Focused form fields also flipped to white in dark mode; fixed.
+- **No input-purpose tokens on the application** (1.3.5 Identify Input Purpose). Name, address, email, and phone fields now carry `autocomplete` values.
+- **Required fields were not indicated visibly** (3.3.2). Asterisks plus an instruction line; phone and CWID have example/help text tied to the field with `aria-describedby`.
+- **Validation errors were color-only for screen readers.** Fields now get `aria-invalid`, and the submission error is announced (`role="alert"`) with the advisor's email as a fallback.
+- **Focus was lost after a successful submission**, which also broke the Escape key. Focus now moves to the confirmation heading inside the dialog.
+- **Events slideshow auto-advanced every 5 seconds with no pause** (2.2.2). It now starts paused.
+- **Navigation was inconsistent** (3.2.3). Events, privacy, and terms pages used a different menu (with the template leftover label "Fourth navbar example"). Every society page now shares one header.
+- **Missing landmarks and skip link** (1.3.1, 2.4.1). Every page has a `<main>`, the footer sits outside it, and a "Skip to main content" link appears on focus.
+- **Heading structure:** duplicate `<h1>`s from the site title, skipped levels in modals, `<h5>…</h3>` mismatches, and an empty heading in the PSA FAQ. All corrected.
+- **Greek-letter nav links** (Π Α Α / Π Σ Α) now have spoken names ("Pi Alpha Alpha") for screen readers.
+- Added `prefers-reduced-motion` handling for card and button hover animations.
 
-**Fixed:**
-- `.btn-outline-primary` - Changed color from #FF7900 to #be5a00 (now 4.5:1+)
-- `.btn-outline-info` - Changed color to #00819b (now 4.5:1+)
-- `.btn-outline-warning` - Changed color to #be5a00 (now 4.5:1+)
-- `.lead.text-muted` - Darkened to #5a6268 for better contrast
+### Functional bugs
 
-**Impact:** All buttons now meet WCAG2AA standards for color contrast.
+- **The phone-number check never ran.** Its regex used a conditional group JavaScript doesn't support, so browsers discarded it and accepted anything ("abc" passed). Replaced with a working 10-digit pattern.
+- **GPAs with three decimals were rejected** (e.g., 3.456 → "nearest valid values are 3.45 and 3.46"). Step is now 0.001, with a 4.0 maximum.
+- **Graduation year silently defaulted to the current year.** It now requires a choice.
+- **PSA FAQ:** question 1's button sat outside its heading, and question 6's panel was closed before its content, so the last two questions never collapsed. Rebuilt.
+- **PSA home page threw a JavaScript error** (year script ran before the footer existed).
+- **Events pages** threw a redeclaration error, showed a stray ">" under the calendar, linked a missing favicon, and said "Events for 2023-2023."
+- **PSA calendar embed** included the chapter account's private Contacts calendar, which the public can't see.
+- **PAA resources modal** labeled the Pi Alpha Alpha national link "Pi Sigma Alpha."
+- **Broken font request** (Cinzel, HTTP 400) and unused font/icon downloads removed.
+- Stale `og:url` values pointed at the old dadams-au.github.io paths.
+- Dark mode: the PAA logo and the CSUF footer logo nearly vanished on dark backgrounds; the PAA logo now sits on white and the footer swaps to the reversed CSUF logo.
 
----
+### Housekeeping
 
-### 2. Heading Hierarchy (Fixed)
-**Problem:** Site title used `<h3>` instead of `<h1>`, breaking proper document structure.
+- The portal repo had `node_modules/` (5,363 files) and a stale Jekyll `_site/` build committed. Both removed; `.gitignore` added to all three repos.
+- The PSA home page's typos corrected ("thier," "actvites," "Financial Assistant," "masters degree").
 
-**Fixed:**
-- Changed `<h3 class="...">POSC Honor Societies</h3>` to `<h1 class="h3">POSC Honor Societies</h1>` on all pages
-- Maintains visual styling while providing correct semantic structure
+### Content updates (advisor decisions)
 
-**Impact:** Screen readers can now properly identify the main page heading.
+- Fee cards on both sites now say payment instructions arrive in the welcome email (replacing PAA's GH 516/509 drop-off note and PSA's blank local-dues line).
+- GPA and unit fields are required on both applications; the "(if applicable)" graduate-unit fields stay optional.
+- PSA: members receive cords and a charm or pin (FAQ answer and benefits list previously said "medallion").
 
----
+## Still needs a human
 
-### 3. Form Label Associations (Fixed)
-**Problem:** Labels for "City" and "ZIP" fields didn't connect to their inputs.
+1. **Submit one real test application on each site.** The sites submit to Formspree with AJAX. If reCAPTCHA is switched on in the Formspree dashboard (the README says it is), AJAX submissions fail. The error message now gives students the advisor's email, but confirm the happy path before the semester deadline.
+2. **Screen reader pass** with VoiceOver (Mac/iOS) and NVDA (Windows) through the application form.
 
-**Fixed:**
-- Added `id="city"` to city input fields
-- Added `id="postal-code"` to ZIP input fields
-- Labels now properly associate with inputs
-
-**Impact:** Screen readers announce field labels correctly; improves form accessibility.
-
----
-
-### 4. Focus States (Enhanced)
-**Problem:** No visible focus indicators for keyboard navigation.
-
-**Fixed:**
-- Added 2px orange (#FF7900) outline with 2px offset for all interactive elements
-- Buttons, links, and form controls now have clear focus states
-
-**Impact:** Keyboard users can see where they are on the page.
-
----
-
-### 5. Navigation Transparency (Improved)
-**Problem:** Low contrast on navigation links with transparency.
-
-**Fixed:**
-- Increased nav link opacity from 0.5 to 0.75 (home page)
-- Increased from 0.85 to 0.95 (content pages)
-- Hover state now uses fully opaque white
-
-**Impact:** Better visibility for all navigation elements.
-
----
-
-## ⚠️ Remaining Warnings (Non-Critical)
-
-These are recommendations, not failures:
-
-1. **Navigation List Markup (H48)** - Suggests using `<ul>/<li>` for navigation sections
-   - Current implementation is valid but could be enhanced
-   - Does not impact WCAG2AA compliance
-
-2. **Transparency Warnings (G18.Alpha)** - Suggests verifying contrast on elements with transparency
-   - All elements have been manually verified to meet 4.5:1 ratio
-   - Warnings are precautionary, not actual failures
-
-3. **Heading Nesting (G141)** - Suggests some h5 elements should be h3
-   - Related to Bootstrap card component styling
-   - Does not break accessibility; more of a best practice
-
----
-
-## 🎓 University Compliance
-
-**CSU Accessibility Requirements:** ✅ PASSED
-
-The site now meets California State University accessibility standards:
-- ✅ WCAG 2.0 Level AA compliant
-- ✅ Proper semantic HTML structure
-- ✅ Keyboard navigable with visible focus states
-- ✅ Sufficient color contrast throughout
-- ✅ Screen reader compatible
-- ✅ Form labels properly associated
-
----
-
-## 🛠️ Technical Changes Made
-
-### CSS Files Modified:
-1. **css/styles.css** - Added accessibility overrides for button contrast and focus states
-2. **css/cover.css** - Updated navigation transparency values
-
-### HTML Files Modified:
-1. **index.html** - Fixed heading hierarchy, footer transparency
-2. **paa.html** - Fixed heading hierarchy, form labels (city, postal-code)
-3. **psa.html** - Fixed heading hierarchy, form labels (city, postal-code)
-
----
-
-## 📊 Testing
-
-To run accessibility tests:
+## Re-running the checks
 
 ```bash
 npm install
-node test-accessibility.js
+node test-accessibility.js   # pa11y, WCAG2AA
 ```
-
----
-
-## 📝 Recommendations for Future
-
-1. Consider converting navigation sections to use `<nav><ul><li>` structure
-2. Review heading hierarchy in card components for semantic improvements
-3. Continue testing with real assistive technologies (NVDA, JAWS, VoiceOver)
-4. Periodic re-testing after content updates
-
----
-
-**Prepared by:** GitHub Copilot  
-**For:** David P. Adams, Faculty Advisor  
-**Institution:** California State University, Fullerton
