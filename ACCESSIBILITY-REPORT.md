@@ -9,6 +9,8 @@ This replaces the October 2025 report, which described the sites as WCAG 2.0 AA 
 
 ## Results
 
+The audit covered 11 pages. Afterward, at the advisor's request, the two events pages (last updated 2023) and their home-page cards were removed, along with about 38 MB of unused images. The sites now have 9 pages; all still pass.
+
 | Check | Before | After |
 |---|---|---|
 | axe violations (WCAG 2.2 AA + best practice, both themes) | 82 | 0 |
@@ -66,9 +68,7 @@ Layout already reflowed cleanly at 320px wide and still does. Automated tools ca
    - PSA fee card lists "$15 Local Chapter Dues:" with no payment instructions (PAA's card says where to deliver payment).
    - PAA payment location (GH 516 / GH 509) still current?
    - PSA FAQ asks about "cords and charm or pin" but answers "cords and medallion."
-   - Events pages still feature the 2023 banquet slideshow.
    - GPA and unit fields on both applications are optional. If eligibility review depends on them, make them required.
-4. `images/` holds about 38 MB of photos no page uses. Safe to prune if nothing outside the sites links to them.
 
 ## Re-running the checks
 

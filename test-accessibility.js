@@ -5,7 +5,7 @@ const path = require('path');
 process.env.CHROME_DISABLE_CRASHPAD = '1';
 
 async function testAccessibility() {
-  const files = ['index.html', 'psa_events.html', 'privacy.html', 'tou.html'];
+  const files = ['index.html', 'privacy.html', 'tou.html'];
   
   console.log('🔍 Running accessibility tests on HTML files...\n');
   

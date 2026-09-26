@@ -5,7 +5,6 @@ This repository contains the official website for two honor societies at Cal Sta
 ## Features
 
 - **Membership Information**: Details about how to become a member and the benefits of joining.
-- **Events**: Upcoming and past events organized by the societies.
 - **Qualifications**: Criteria for joining the honor societies.
 - **Resources**: Useful resources for members and those interested in the fields of Public Administration and Political Science.
 - **Scholarship**: Information about scholarship opportunities available to members.
