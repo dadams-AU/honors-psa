@@ -60,15 +60,16 @@ Layout already reflowed cleanly at 320px wide and still does. Automated tools ca
 - The portal repo had `node_modules/` (5,363 files) and a stale Jekyll `_site/` build committed. Both removed; `.gitignore` added to all three repos.
 - The PSA home page's typos corrected ("thier," "actvites," "Financial Assistant," "masters degree").
 
+### Content updates (advisor decisions)
+
+- Fee cards on both sites now say payment instructions arrive in the welcome email (replacing PAA's GH 516/509 drop-off note and PSA's blank local-dues line).
+- GPA and unit fields are required on both applications; the "(if applicable)" graduate-unit fields stay optional.
+- PSA: members receive cords and a charm or pin (FAQ answer and benefits list previously said "medallion").
+
 ## Still needs a human
 
 1. **Submit one real test application on each site.** The sites submit to Formspree with AJAX. If reCAPTCHA is switched on in the Formspree dashboard (the README says it is), AJAX submissions fail. The error message now gives students the advisor's email, but confirm the happy path before the semester deadline.
 2. **Screen reader pass** with VoiceOver (Mac/iOS) and NVDA (Windows) through the application form.
-3. **Content that only the advisor can confirm:**
-   - PSA fee card lists "$15 Local Chapter Dues:" with no payment instructions (PAA's card says where to deliver payment).
-   - PAA payment location (GH 516 / GH 509) still current?
-   - PSA FAQ asks about "cords and charm or pin" but answers "cords and medallion."
-   - GPA and unit fields on both applications are optional. If eligibility review depends on them, make them required.
 
 ## Re-running the checks
 
